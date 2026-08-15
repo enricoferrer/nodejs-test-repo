@@ -1,0 +1,26 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 20
+    commands:
+      - echo "Installing dependencies..."
+      - npm install
+  pre_build:
+    commands:
+      - echo "Running tests..."
+      - npm test
+  build:
+    commands:
+      - echo "Build phase (nothing to compile, Node.js runs as-is)"
+  post_build:
+    commands:
+      - echo "Build completed on $(date)"
+
+artifacts:
+  files:
+    - '**/*'
+  exclude-paths:
+    - node_modules/**/*
+    - .git/**/*

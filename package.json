@@ -1,0 +1,14 @@
+{
+  "name": "nodejs-cicd-demo",
+  "version": "1.0.0",
+  "description": "Simple Node.js app for practicing AWS CI/CD (CodePipeline, CodeBuild, CodeDeploy)",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "node --test"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
