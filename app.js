@@ -5,7 +5,7 @@ const port = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
   res.json({
-    message: 'Hello from the Node.js CI/CD demo app! - Test Change 01',
+    message: 'Hello from the Node.js CI/CD demo app! - Test Change DeployToProd',
     version: process.env.APP_VERSION || '1.0.0',
     hostname: require('os').hostname(),
   });
