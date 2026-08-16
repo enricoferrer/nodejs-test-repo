@@ -3,7 +3,9 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.get('/', (req, res) => {
+app.use(express.static('public'));
+
+app.get('/api/status', (req, res) => {
   res.json({
     message: 'Hello from the Node.js CI/CD demo app! - Test Change DeployToProd',
     version: process.env.APP_VERSION || '1.0.0',

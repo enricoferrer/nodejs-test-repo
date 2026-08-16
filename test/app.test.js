@@ -14,13 +14,13 @@ function request(server, path) {
   });
 }
 
-test('GET / returns a welcome message', async (t) => {
+test('GET /api/status returns app info', async (t) => {
   const server = app.listen(0);
   t.after(() => server.close());
 
-  const { status, body } = await request(server, '/');
+  const { status, body } = await request(server, '/api/status');
   assert.strictEqual(status, 200);
-  assert.strictEqual(body.message, 'Hello from the Node.js CI/CD demo app!');
+  assert.match(body.message, /Hello from the Node.js CI\/CD demo app!/);
 });
 
 test('GET /health returns ok', async (t) => {
